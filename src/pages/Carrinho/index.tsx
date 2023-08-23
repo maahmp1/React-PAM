@@ -1,6 +1,7 @@
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import topo from "../../../assets/topo.png";
+import logo from "../../../assets/logo.png"
 
 const width = Dimensions.get("screen").width;
 
@@ -9,9 +10,13 @@ export default function Carrinho() {
     <>
       <Image source={topo} style={estilos.topo} />
       <Text style={estilos.titulo}>Detalhes do Carrinho</Text>
-      <View>
-        <Text>Carrinho de Compras</Text>
-        <Text>Fazenda ETEC Cidade do Livro</Text>
+      <View style={estilos.carrinho}>
+        <Text style={estilos.nome}>Carrinho de Compras</Text>
+        <View style={estilos.fazenda}>
+          <Image source={logo}/>
+          <Text>Fazenda ETEC Cidade do Livro</Text>
+
+        </View>
         <Text>Carrinho de Compras</Text>
         <Text>
           Uma cesta com produtos selecionados cuidadosamente da fazenda direto
@@ -37,5 +42,20 @@ const estilos = StyleSheet.create({
     lineHeight: 26,
     fontWeight: "bold",
     padding: 16,
+    fontFamily: "MontserratItalic",
   },
+  carrinho: {
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+  },
+  nome: {
+    fontSize: 26,
+    lineHeight: 42,
+    color: "#464646",
+    fontFamily: "MontserratBold",
+  },
+  fazenda: {
+    flexDirection:"row",
+    paddingVertical: 12
+  }
 });
