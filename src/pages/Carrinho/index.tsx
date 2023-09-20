@@ -1,30 +1,16 @@
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
-import topo from "../../../assets/topo.png";
-import logo from "../../../assets/logo.png"
+import Topo from './components/Topo';
+import Detalhe from "./components/Detalhe";
 
 const width = Dimensions.get("screen").width;
 
 export default function Carrinho() {
   return (
     <>
-      <Image source={topo} style={estilos.topo} />
-      <Text style={estilos.titulo}>Detalhes do Carrinho</Text>
+      <Topo/>
       <View style={estilos.carrinho}>
-        <Text style={estilos.nome}>Carrinho de Compras</Text>
-
-        <View style={estilos.fazenda}>
-          <Image style={estilos.imagemFazenda }source={logo}/>
-          <Text style={estilos.nomeFazenda} >Fazenda ETEC Cidade do Livro</Text>
-        </View>
-
-        <Text style={estilos.descricao}>
-          Uma cesta com produtos selecionados cuidadosamente da fazenda direto
-          para a sua cozinha
-        </Text>
-
-        <Text style={estilos.preco}>R$ 40,00</Text>
-
+          <Detalhe/>
       </View>
     </>
   );
