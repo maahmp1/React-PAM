@@ -2,15 +2,22 @@ import React from "react";
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import Topo from './components/Topo';
 import Detalhe from "./components/Detalhe";
+import carrinho from "../../mocks/carrinho";
 
 const width = Dimensions.get("screen").width;
 
 export default function Carrinho() {
   return (
     <>
-      <Topo/>
+      <Topo titulo={carrinho.topo.titulo} />
       <View style={estilos.carrinho}>
-          <Detalhe/>
+          <Detalhe
+           nome={carrinho.detalhes.nome}
+           nomeFazenda={carrinho.detalhes.nomeFazenda}
+           descricao={carrinho.detalhes.descricao}
+           preco={carrinho.detalhes.preco}
+           
+           />
       </View>
     </>
   );

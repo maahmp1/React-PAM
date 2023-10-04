@@ -4,12 +4,15 @@ import { Dimensions, StyleSheet, Image, Text } from "react-native";
 
 const width = Dimensions.get("screen").width;
 
+type Props = {
+  titulo: string
+}
 
-export default function Topo() {
+export default function Topo({titulo}: Props) {
   return (
     <>
       <Image source={topo} style={estilos.topo} />
-      <Text style={estilos.titulo}>Detalhes do Carrinho</Text>
+      <Text style={estilos.titulo}>{titulo}</Text>
     </>
   );
  
